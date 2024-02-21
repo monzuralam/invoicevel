@@ -1,7 +1,7 @@
-@extends('layouts.main');
+@extends('layouts.main')
 
-@section('title', 'Dashboard');
+@section('title', 'Dashboard')
 
-@section('content');
+@section('content')
     <h2>Dashboard</h2>
-@endsection;
+@endsection

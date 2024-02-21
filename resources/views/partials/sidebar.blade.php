@@ -11,7 +11,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?php echo route('clients'); ?>">
                 <i class="bi bi-people"></i><span>Clients</span>
             </a>
         </li>

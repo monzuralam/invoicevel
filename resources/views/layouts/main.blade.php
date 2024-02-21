@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    @include('partials.head');
+    @include('partials.head')
 </head>
 
 <body>
-    @include('partials.topbar');
+    @include('partials.topbar')
 
-    @include('partials.sidebar');
+    @include('partials.sidebar')
 
     <main id="main" class="main">
-        @yield('content');
+        @yield('content')
     </main><!-- End #main -->
 
-    @include('partials.footer');
+    @include('partials.footer')
 
-    @include('partials.scripts');
+    @include('partials.scripts')
 </body>
 
 </html>
