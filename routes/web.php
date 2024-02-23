@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::get('/clients', [ClientController::class, 'index'])->name('clients');
 
+Route::delete('/clients/delete/{id}', [ClientController::class, 'destroy'])->name('clients.destroy');
+
 Route::get('/invoices', function () {
     return view('invoices');
 })->name('invoices');

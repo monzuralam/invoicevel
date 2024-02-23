@@ -20,4 +20,16 @@ class ClientController extends Controller
     public function create(){
 
     }
+
+    /**
+     * Delete Clients
+     *
+     * @param init $id
+     * @return void
+     */
+    public function destroy($id){
+        $client = User::findOrFail($id);
+        $client->delete();
+        return redirect(route('clients'));
+    }
 }

@@ -4,8 +4,17 @@
 
 @push('styles')
     <style>
-        h2{
+        h2 {
             margin-bottom: 20px;
+        }
+
+        form button {
+            border: 0;
+            background: transparent;
+        }
+
+        td form {
+            display: inline-block;
         }
     </style>
 @endpush
@@ -25,16 +34,63 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $count = 1
+                    @endphp
                     @foreach ($clients as $client)
                         <tr>
-                            <th scope="row">{{ $client->id }}</th>
+                            <th scope="row">{{ $count }}</th>
                             <td>{{ $client->name }}</td>
                             <td>{{ $client->email }}</td>
                             <td>
-                                <a href=""><i class="bi bi-eye"></i></a>
-                                <a href=""><i class="bi bi-trash"></i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{$client->id}}"><i class="bi bi-eye"></i></a>
+                                <div class="modal fade" id="modal{{$client->id}}" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Client Information</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <table class="table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Name:</td>
+                                                            <td>{{ $client->name}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Email:</td>
+                                                            <td>{{ $client->email}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Created:</td>
+                                                            <td>{{ $client->created_at}}</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Updated:</td>
+                                                            <td>{{ $client->updated_at}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form action="/clients/delete/{{$client->id}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button><i class="bi bi-trash"></i></button>
+                                </form>
                             </td>
                         </tr>
+                        @php
+                            $count++
+                        @endphp
                     @endforeach
                 </tbody>
             </table>
