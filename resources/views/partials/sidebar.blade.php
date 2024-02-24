@@ -11,9 +11,21 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="<?php echo route('clients'); ?>">
-                <i class="bi bi-people"></i><span>Clients</span>
+            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-people"></i><span>Invoices</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
+            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="@php echo route('clients') @endphp">
+                        <i class="bi bi-circle"></i><span>All Clients</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="@php echo route('clients.create') @endphp">
+                        <i class="bi bi-circle"></i><span>Add Client</span>
+                    </a>
+                </li>
+            </ul>
         </li>
 
         <li class="nav-item">

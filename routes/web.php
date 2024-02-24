@@ -21,6 +21,10 @@ Route::get('/', function () {
 
 Route::get('/clients', [ClientController::class, 'index'])->name('clients');
 
+Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
+
+Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
+
 Route::delete('/clients/delete/{id}', [ClientController::class, 'destroy'])->name('clients.destroy');
 
 Route::get('/invoices', function () {
