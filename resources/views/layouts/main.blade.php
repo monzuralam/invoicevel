@@ -11,6 +11,9 @@
     @include('partials.sidebar')
 
     <main id="main" class="main">
+        <div class="pagetitle">
+            <h1>@yield('pageTitle', '')</h1>
+        </div>
         @yield('content')
     </main><!-- End #main -->
 
