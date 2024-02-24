@@ -81,7 +81,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <form action="/clients/delete/{{$client->id}}" method="POST">
+                                <a href="{{ route('clients.edit', $client->id)  }}"><i class="bi bi-pencil-square"></i></a>
+                                <form action="{{ route('clients.destroy', $client->id)}}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button><i class="bi bi-trash"></i></button>

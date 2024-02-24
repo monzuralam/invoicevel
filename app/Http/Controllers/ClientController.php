@@ -44,6 +44,34 @@ class ClientController extends Controller
     }
 
     /**
+     * Edit Data
+     *
+     * @param Request $request
+     * @param init $id
+     * @return void
+     */
+    public function edit(Request $request, $id){
+        $data = User::findOrFail($id);
+        return view('clients-update', compact('data'));
+    }
+
+    /**
+     * Update Data
+     *
+     * @param Request $request
+     * @return void
+     */
+    public function update(Request $request, $id){
+        $client = User::findOrFail($id);
+        if($client){
+            $client->update($request->all());
+
+            // redirect to client
+            return redirect()->route('clients');
+        }
+    }
+
+    /**
      * Delete Clients
      *
      * @param init $id
