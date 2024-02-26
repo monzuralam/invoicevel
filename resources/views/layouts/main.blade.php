@@ -6,18 +6,27 @@
 </head>
 
 <body>
-    @include('partials.topbar')
+    @if (!request()->is('login'))
+        @include('partials.topbar')
 
-    @include('partials.sidebar')
+        @include('partials.sidebar')
+    @endif
 
-    <main id="main" class="main">
-        <div class="pagetitle">
-            <h1>@yield('pageTitle', '')</h1>
-        </div>
+
+    <main @if (!request()->is('login')) id="main" class="main" @endif>
+
+        @if (isset($pageTitle))
+            <div class="pagetitle">
+                <h1>@yield('pageTitle', '')</h1>
+            </div>
+        @endif
+
         @yield('content')
     </main><!-- End #main -->
 
-    @include('partials.footer')
+    @if (!request()->is('login'))
+        @include('partials.footer')
+    @endif
 
     @include('partials.scripts')
 </body>
