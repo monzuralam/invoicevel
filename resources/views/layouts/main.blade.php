@@ -6,14 +6,14 @@
 </head>
 
 <body>
-    @if (!request()->is('login'))
+    @if (!request()->is('login') && !request()->is('register'))
         @include('partials.topbar')
 
         @include('partials.sidebar')
     @endif
 
 
-    <main @if (!request()->is('login')) id="main" class="main" @endif>
+    <main @if (!request()->is('login') && !request()->is('register')) id="main" class="main" @endif>
 
         @if (isset($pageTitle))
             <div class="pagetitle">
@@ -24,7 +24,7 @@
         @yield('content')
     </main><!-- End #main -->
 
-    @if (!request()->is('login'))
+    @if (!request()->is('login') && !request()->is('register'))
         @include('partials.footer')
     @endif
 
