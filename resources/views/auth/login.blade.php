@@ -55,7 +55,7 @@
                                         <button class="btn btn-primary w-100" type="submit">Login</button>
                                     </div>
                                     <div class="col-12">
-                                        <p class="small mb-0">Don't have account? <a href="">Create an account</a>
+                                        <p class="small mb-0">Don't have account? <a href="<?php echo route('register'); ?>">Create an account</a>
                                         </p>
                                     </div>
                                 </form>
