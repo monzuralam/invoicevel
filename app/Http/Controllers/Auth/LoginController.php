@@ -30,4 +30,15 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         }
     }
+
+    /**
+     * Log out
+     *
+     * @return void
+     */
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->route('login');
+    }
 }

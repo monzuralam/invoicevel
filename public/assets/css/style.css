@@ -1235,3 +1235,9 @@ h6 {
 .form-control.error {
   border: 1px solid red !important;
 }
+
+form.dropdown-item input {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
