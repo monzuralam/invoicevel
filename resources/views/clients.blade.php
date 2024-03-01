@@ -85,7 +85,7 @@
                                 <form action="{{ route('clients.destroy', $client->id)}}" method="POST">
                                     @csrf
                                     @method('delete')
-                                    <button><i class="bi bi-trash"></i></button>
+                                    <button onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
