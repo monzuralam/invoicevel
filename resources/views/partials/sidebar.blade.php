@@ -16,12 +16,12 @@
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="@php echo route('clients') @endphp">
+                    <a href="<?php echo route('clients'); ?>">
                         <i class="bi bi-circle"></i><span>All Clients</span>
                     </a>
                 </li>
                 <li>
-                    <a href="@php echo route('clients.create') @endphp">
+                    <a href="<?php echo route('clients.create'); ?>">
                         <i class="bi bi-circle"></i><span>Add Client</span>
                     </a>
                 </li>
@@ -29,10 +29,10 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link collapsed" data-bs-target="#components-invoice" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-file-earmark-text"></i><span>Invoices</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-            <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <ul id="components-invoice" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="<?php echo route('invoices'); ?>">
                         <i class="bi bi-circle"></i><span>All Invoices</span>
