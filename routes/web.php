@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\InvoiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,10 +44,6 @@ Route::put('/clients/{id}', [ClientController::class, 'update'])->name('clients.
 
 Route::delete('/clients/{id}/delete', [ClientController::class, 'destroy'])->name('clients.destroy')->middleware('auth');
 
-Route::get('/invoices', function () {
-    return view('invoices');
-})->name('invoices')->middleware('auth');
+Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoices')->middleware('auth');
 
-Route::get('/invoices/create', function () {
-    return view('invoice-create');
-})->name('invoice-create')->middleware('auth');
+Route::get('/invoices/create', [InvoiceController::class, 'create'])->name('invoice-create')->middleware('auth');
