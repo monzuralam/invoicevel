@@ -14,7 +14,7 @@ class ClientController extends Controller
 
     public function index():view{
         $clients = User::where('role', 'user')->get();
-        return view('clients', compact('clients'));
+        return view('clients.clients', compact('clients'));
     }
 
     /**
@@ -23,7 +23,7 @@ class ClientController extends Controller
      * @return void
      */
     public function create():view{
-        return view('clients-create');
+        return view('clients.clients-create');
     }
 
     /**
@@ -52,7 +52,7 @@ class ClientController extends Controller
      */
     public function edit(Request $request, $id){
         $data = User::findOrFail($id);
-        return view('clients-update', compact('data'));
+        return view('clients.clients-update', compact('data'));
     }
 
     /**
