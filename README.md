@@ -5,6 +5,8 @@
 - PDF Invoice
 - Print Invoice
 - Packing Slip Generate
+- Manage Clients
+- Payments
 
 ### Inspiration
 - [Biller](https://billar.gainhq.com/admin/users/login)
