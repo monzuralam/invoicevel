@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,7 @@ class InvoiceController extends Controller
      * @return void
      */
     public function create():view{
-        return view('invoices.invoice-create');
+        $clients = User::where('role', 'user')->get();
+        return view('invoices.invoice-create', compact('clients'));
     }
 }
